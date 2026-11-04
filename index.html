@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>youtube-aru-nihonjin 週報</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;700&family=Shippori+Mincho+B1:wght@800&display=swap">
+<style>
+:root{color-scheme:light}
+body{margin:0}
+/* 1枚の説明書きの紙：見出し・本文・日英の段落 */
+:root{--bg:#f6f5f1;--paper:#fff;--ink:#1d2433;--muted:#5d6577;--line:#dcdad3;--accent:#b4862f;
+  --f-disp:"Shippori Mincho B1","Hiragino Mincho ProN",serif;--f-body:"Zen Kaku Gothic New","Hiragino Sans","Yu Gothic",system-ui,sans-serif}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#141925;--paper:#1c2232;--ink:#e8e6df;--muted:#a3a9b8;--line:#2e3547;--accent:#e0b65c;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#141925;--paper:#1c2232;--ink:#e8e6df;--muted:#a3a9b8;--line:#2e3547;--accent:#e0b65c;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.8;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:32px 64px}
+main{max-width:720px;margin:0 auto;background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:28px max(20px,4vw)}
+h1{font-family:var(--f-disp);font-weight:800;font-size:clamp(24px,4.5vw,30px);line-height:1.3;margin:0 0 6px;text-wrap:balance}
+.sub{color:var(--muted);margin:0 0 24px}
+h2{font-size:17px;margin:28px 0 6px;padding-top:16px;border-top:1px solid var(--line);text-wrap:balance}
+h2 .en{font-weight:400;color:var(--muted);font-size:14px;margin-left:8px}
+p,ul{margin:6px 0;max-width:65ch} ul{padding-left:1.3em}
+.en-p{color:var(--muted);font-size:14px}
+code{font-size:13px;background:color-mix(in srgb,var(--accent) 14%,transparent);padding:1px 5px;border-radius:3px;overflow-wrap:anywhere}
+a{color:var(--accent)}
+footer{max-width:720px;margin:16px auto 0;color:var(--muted);font-size:13px}
+</style>
+</head>
+<body>
+<main>
+  <h1>youtube-aru-nihonjin 週報</h1>
+  <p class="sub">YouTubeチャンネル「ある日本人の一生」「Simulated Lives of Japan」の運営者が、自分のチャンネルの数字を振り返るための個人用ツールです。<br><span class="en-p">A private tool the owner of the YouTube channels "ある日本人の一生" and "Simulated Lives of Japan" uses to review their own channel statistics.</span></p>
+
+  <h2 id="about">このツールについて<span class="en">About</span></h2>
+  <p>運営者の自宅サーバーで週に1回動き、運営者自身のチャンネルの数字とコメントを読み取って、運営者向けの週報を作ります。一般の方が使うものではなく、運営者以外のGoogleアカウントでは使いません。</p>
+  <p class="en-p">It runs once a week on the owner's home server, reads statistics and comments of the owner's own channels, and produces a weekly report for the owner. It is not offered to the public and is used only with the owner's Google account.</p>
+
+  <h2 id="privacy">プライバシーポリシー<span class="en">Privacy policy</span></h2>
+  <p><b>読み取るもの：</b>YouTube Data API と YouTube Analytics API を通じて、運営者のチャンネルの動画一覧、再生数・高評価数・コメント数、視聴時間・平均視聴率・視聴維持率・流入元、登録者数、動画に付いたコメントの本文・高評価数・日時。許可の範囲は読み取りだけ（<code>youtube.readonly</code>・<code>yt-analytics.readonly</code>）で、投稿・返信・設定の変更は行いません。</p>
+  <p class="en-p">What is read: via the YouTube Data API and YouTube Analytics API, the owner's channel video list, views, likes, comment counts, watch time, average view percentage, audience retention, traffic sources, subscriber count, and comment text, like counts and dates. Only read-only scopes are requested; the tool never posts, replies or changes settings.</p>
+  <p><b>使い道：</b>運営者が動画の内容や構成を見直すための週報づくりにだけ使います。広告、販売、第三者への提供には使いません。</p>
+  <p class="en-p">Use: only to produce the owner's weekly review report. The data is not used for advertising, not sold, and not shared with third parties.</p>
+  <p><b>コメントの扱い：</b>コメントを書いた人の名前やアカウントの情報は保存しません。週報にはコメントの本文の一部だけを載せます。</p>
+  <p class="en-p">Comments: commenters' names and account details are not stored. The report quotes only parts of the comment text.</p>
+  <p><b>保存する場所と期間：</b>集めた数字は運営者の自宅サーバーに保存し、チャンネルの運営を続ける間だけ持ちます。認証情報はサーバーの中だけに置き、外部に送りません。</p>
+  <p class="en-p">Storage: collected data is kept on the owner's home server for as long as the channels are operated. Credentials stay on that server and are never sent elsewhere.</p>
+  <p><b>許可の取り消し：</b>Googleアカウントの「セキュリティ → サードパーティ製のアプリとサービス」から、いつでも取り消せます。取り消すと、このツールは数字を読み取れなくなります。</p>
+  <p class="en-p">Revoking access: access can be revoked at any time from Google Account → Security → Third-party apps and services.</p>
+  <p>このツールによるYouTube APIの利用は、<a href="https://www.youtube.com/t/terms">YouTube利用規約</a>と<a href="https://policies.google.com/privacy">Googleプライバシーポリシー</a>に従います。</p>
+  <p class="en-p">Use of the YouTube API Services follows the <a href="https://www.youtube.com/t/terms">YouTube Terms of Service</a> and the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</p>
+
+  <h2 id="contact">お問い合わせ<span class="en">Contact</span></h2>
+  <p>YouTubeチャンネル「<a href="https://www.youtube.com/@aru_nihonjin">ある日本人の一生</a>」のコメント欄からご連絡ください。</p>
+  <p class="en-p">Please contact us through the comments on the YouTube channel <a href="https://www.youtube.com/@SimulatedLivesJapan">Simulated Lives of Japan</a>.</p>
+</main>
+<footer>最終更新：2026年11月4日</footer>
+</body>
+</html>
